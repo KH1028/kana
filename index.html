@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>平峯奏</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      overflow: hidden;
+      background: #061923;
+      color: white;
+      font-family: "Yu Mincho", "Hiragino Mincho ProN", "BIZ UDPMincho", serif;
+    }
+
+    .page {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      background: #061923;
+    }
+
+    .tuna-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .shade {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg,
+          rgba(3, 20, 31, .55) 0%,
+          rgba(3, 20, 31, .25) 35%,
+          rgba(3, 20, 31, .02) 65%,
+          rgba(3, 20, 31, .12) 100%);
+    }
+
+    .content {
+      position: absolute;
+      z-index: 2;
+      left: clamp(32px, 8vw, 120px);
+      top: 50%;
+      transform: translateY(-50%);
+      width: min(420px, 38vw);
+    }
+
+    h1 {
+      margin: 0 0 32px;
+      font-size: clamp(3rem, 6vw, 6.5rem);
+      font-weight: 400;
+      letter-spacing: .16em;
+      line-height: 1;
+      text-shadow: 0 3px 18px rgba(0,0,0,.45);
+    }
+
+    .line {
+      width: 62px;
+      height: 1px;
+      margin: 0 0 25px;
+      background: rgba(255,255,255,.85);
+    }
+
+    .profile {
+      font-size: clamp(1rem, 1.6vw, 1.35rem);
+      line-height: 2.15;
+      letter-spacing: .12em;
+      text-shadow: 0 2px 12px rgba(0,0,0,.6);
+    }
+
+    .profile p {
+      margin: 0;
+    }
+
+    @media (max-width: 700px) {
+      .content {
+        left: 8vw;
+        top: auto;
+        bottom: 9vh;
+        transform: none;
+        width: 75vw;
+      }
+
+      .tuna-image {
+        object-position: 62% center;
+      }
+
+      .shade {
+        background: linear-gradient(
+          0deg,
+          rgba(3,20,31,.75) 0%,
+          rgba(3,20,31,.18) 65%,
+          rgba(3,20,31,.05) 100%
+        );
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <img class="tuna-image" src="tuna_background.png" alt="海中を泳ぐマグロ">
+    <div class="shade"></div>
+
+    <section class="content">
+      <h1>平峯 奏</h1>
+      <div class="line"></div>
+      <div class="profile">
+        <p>西洋古典哲学が専門</p>
+        <p>趣味は魚を食べること</p>
+        <p>まぐろが大好き</p> 
+      </div>
+    </section>
+  </main>
+</body>
+</html>
